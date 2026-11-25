@@ -45,12 +45,14 @@ document.querySelectorAll('[data-yt]').forEach(b=>b.addEventListener('click',()=
 document.querySelectorAll('[data-mp4]').forEach(b=>b.addEventListener('click',()=>open('<video src="'+b.dataset.mp4+'" controls autoplay playsinline></video>',true,false)));
 m.addEventListener('click',ev=>{{if(ev.target===m)close();}});document.addEventListener('keydown',ev=>{{if(ev.key==='Escape'&&!m.hidden)close();}});
 </script>'''
+import hashlib
+_css_v=hashlib.md5(open("style.css","rb").read()).hexdigest()[:8]
 def page(title, inner, desc="Super Patch: Infos, Erfahrungsberichte, Videos und Kontakt zu Melanie.", extra=""):
     return f'''<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}"><meta name="author" content="Melanie N. Seyfarth">{extra}
 <meta property="og:title" content="Superlifestyle4u · Melanie N. Seyfarth"><meta property="og:description" content="{e(desc)}"><meta property="og:type" content="website"><meta property="og:image" content="https://rseyfarth.github.io/superlifestyle4u/assets/og.jpg"><meta property="og:url" content="https://rseyfarth.github.io/superlifestyle4u/"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/avatar.png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="stylesheet" href="style.css"></head>
+<link rel="icon" href="assets/avatar.png"><link rel="apple-touch-icon" href="assets/avatar.png"><link rel="stylesheet" href="style.css?v={_css_v}"></head>
 <body class="sl-page">{inner}</body></html>
 '''
 open('index.html','w').write(page("Superlifestyle4u · Melanie N. Seyfarth", body))
