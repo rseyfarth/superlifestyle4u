@@ -54,15 +54,29 @@
   ],
   "videos": [
     {
-      "id": "yP2oXVvSrqc",
-      "titel": "Wie die Technologie funktioniert",
-      "bild": "assets/yt/yP2oXVvSrqc.webp",
-      "sprache": "DE"
+      "id": "k8I13t224ok",
+      "titel": "Jay erklärt das Liberty Patch",
+      "sprache": "DE",
+      "bild": "assets/yt/k8I13t224ok.jpg"
+    },
+    {
+      "id": "mZjBuVmEtS4",
+      "titel": "Jay erklärt das Freedom Patch",
+      "sprache": "DE",
+      "bild": "assets/yt/mZjBuVmEtS4.jpg"
     },
     {
       "id": "Dt9QMNOUzMY",
       "titel": "REM Patch",
-      "bild": "assets/yt/Dt9QMNOUzMY.webp",
+      "sprache": "DE",
+      "bild": "assets/yt/Dt9QMNOUzMY.webp"
+    }
+  ],
+  "weitere": [
+    {
+      "id": "yP2oXVvSrqc",
+      "titel": "Wie die Technologie funktioniert",
+      "bild": "assets/yt/yP2oXVvSrqc.webp",
       "sprache": "DE"
     },
     {
@@ -76,9 +90,7 @@
       "titel": "Rocket Patch",
       "bild": "assets/yt/xzSriNDz28s.webp",
       "sprache": "DE"
-    }
-  ],
-  "weitere": [
+    },
     {
       "id": "AbyxyIsGTQU",
       "titel": "REM Patch",

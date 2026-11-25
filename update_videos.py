@@ -39,4 +39,8 @@ for key in ("shorts","videos","weitere"):
         if lang: d["sprache"]=lang
         items.append(d)
     data[key]=items; print(f"{key}: {len(items)} Videos")
+for key in ("shorts","videos","weitere"):
+    for v in data.get(key,[]):
+        if not v.get("bild","").startswith("http") and not os.path.exists(v.get("bild","")):
+            v["bild"]=thumb(v["id"],key=="shorts")
 json.dump(data,open("videos.json","w",encoding="utf-8"),ensure_ascii=False,indent=2); open("videos.json","a").write("\n")

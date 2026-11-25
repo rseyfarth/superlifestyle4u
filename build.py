@@ -32,7 +32,7 @@ body=f'''<div class="sl-ambient" aria-hidden="true"></div>
 <section class="sl-section"><h2 class="sl-h2">Kurz erklärt</h2><div class="sl-shorts">{"".join(f'<button type="button" class="sl-short" data-yt="{v["id"]}" data-tall="1"><img src="{v["bild"]}" alt="" loading="lazy" class="sl-short-img">{PLAY}<span class="sl-short-title">{e(v["titel"])}</span></button>' for v in S)}</div></section>
 <section class="sl-section"><h2 class="sl-h2">Jay Dhaliwal, Gründer von Super Patch</h2><div class="sl-own">{"".join(f'<button type="button" class="sl-own-card" data-mp4="{d}"><span class="sl-own-thumb"><img src="{v}" alt="" loading="lazy">{PLAY}</span><span class="sl-own-title">{e(t)}</span><span class="sl-own-text">{e(x)}</span></button>' for d,v,t,x,z in eigene if z)}</div></section>
 <section class="sl-section"><h2 class="sl-h2">Die Patches im Video</h2>{grid(V)}
-{f'<details class="sl-more"><summary>Videos in anderen Sprachen ({len(W)})</summary>{grid(W)}</details>' if W else ''}
+{f'<details class="sl-more"><summary>Weitere Videos ({len(W)})</summary>{grid(W)}</details>' if W else ''}
 <a href="{profil["youtube"]}" target="_blank" rel="noopener noreferrer" class="sl-yt-channel">Alle Videos auf YouTube ansehen</a></section>
 <footer class="sl-footer"><a href="impressum.html">Impressum</a><span aria-hidden="true">·</span><a href="datenschutz.html">Datenschutz</a></footer>
 </main>
