@@ -1,0 +1,137 @@
+{
+  "_anleitung": "Die Videos kommen aus YouTube-Playlists. Playlist-IDs unten eintragen (der Teil nach list= im Playlist-Link). Leere ID = Liste unten bleibt wie sie ist.",
+  "playlists": {
+    "shorts": "",
+    "videos": "",
+    "weitere": ""
+  },
+  "shorts": [
+    {
+      "id": "hqQiaKcssfo",
+      "titel": "Moderne Medizin, alte Antworten auf neue Probleme",
+      "bild": "assets/yt/hqQiaKcssfo.webp"
+    },
+    {
+      "id": "ID4qA0dTEJg",
+      "titel": "Black Friday Mega Deal",
+      "bild": "assets/yt/ID4qA0dTEJg.webp"
+    },
+    {
+      "id": "Ih1LGjGePOM",
+      "titel": "Vibrotaktile Technologie von Super Patch",
+      "bild": "assets/yt/Ih1LGjGePOM.webp"
+    },
+    {
+      "id": "hR-Yp6534fc",
+      "titel": "Sofortige Veränderung",
+      "bild": "assets/yt/hR-Yp6534fc.webp"
+    },
+    {
+      "id": "P-tJDqF7eNo",
+      "titel": "Schmerzen: Die Studie zeigt …",
+      "bild": "assets/yt/P-tJDqF7eNo.webp"
+    },
+    {
+      "id": "ETkhepRYbS8",
+      "titel": "Deutliche Stressreduzierung sichtbar",
+      "bild": "assets/yt/ETkhepRYbS8.webp"
+    },
+    {
+      "id": "bD5rk8vXZrs",
+      "titel": "Erfahrungsbericht Freedom und Defend",
+      "bild": "assets/yt/bD5rk8vXZrs.webp"
+    },
+    {
+      "id": "nkMjXvPpNxM",
+      "titel": "Testimony Pain",
+      "bild": "assets/yt/nkMjXvPpNxM.webp"
+    },
+    {
+      "id": "UfXvNrsKk1Y",
+      "titel": "28. Oktober 2025",
+      "bild": "assets/yt/UfXvNrsKk1Y.webp"
+    }
+  ],
+  "videos": [
+    {
+      "id": "yP2oXVvSrqc",
+      "titel": "Wie die Technologie funktioniert",
+      "bild": "assets/yt/yP2oXVvSrqc.webp",
+      "sprache": "DE"
+    },
+    {
+      "id": "Dt9QMNOUzMY",
+      "titel": "REM Patch",
+      "bild": "assets/yt/Dt9QMNOUzMY.webp",
+      "sprache": "DE"
+    },
+    {
+      "id": "7biT7ZaT4I8",
+      "titel": "Lumi Patch",
+      "bild": "assets/yt/7biT7ZaT4I8.webp",
+      "sprache": "DE"
+    },
+    {
+      "id": "xzSriNDz28s",
+      "titel": "Rocket Patch",
+      "bild": "assets/yt/xzSriNDz28s.webp",
+      "sprache": "DE"
+    }
+  ],
+  "weitere": [
+    {
+      "id": "AbyxyIsGTQU",
+      "titel": "REM Patch",
+      "bild": "assets/yt/AbyxyIsGTQU.webp",
+      "sprache": "EN"
+    },
+    {
+      "id": "XaWDJxgb1Q4",
+      "titel": "Lumi Patch",
+      "bild": "assets/yt/XaWDJxgb1Q4.webp",
+      "sprache": "EN"
+    },
+    {
+      "id": "wzXYRicPb5M",
+      "titel": "Rocket Patch",
+      "bild": "assets/yt/wzXYRicPb5M.webp",
+      "sprache": "US"
+    },
+    {
+      "id": "ml23Q4Ri8j4",
+      "titel": "REM Patch",
+      "bild": "assets/yt/ml23Q4Ri8j4.webp",
+      "sprache": "ES"
+    },
+    {
+      "id": "9KnTbvGlFtE",
+      "titel": "Lumi Patch",
+      "bild": "assets/yt/9KnTbvGlFtE.webp",
+      "sprache": "ES"
+    },
+    {
+      "id": "Qd1TK5hhRqw",
+      "titel": "Boost Patch",
+      "bild": "assets/yt/Qd1TK5hhRqw.webp",
+      "sprache": "ES"
+    },
+    {
+      "id": "cdijfMQuRvA",
+      "titel": "Hvordan Freedom Patch fungerer",
+      "bild": "assets/yt/cdijfMQuRvA.webp",
+      "sprache": "DK"
+    },
+    {
+      "id": "ZDiafYmS3wg",
+      "titel": "Hvordan REM Patch fungerer",
+      "bild": "assets/yt/ZDiafYmS3wg.webp",
+      "sprache": "DK"
+    },
+    {
+      "id": "sqTKP4ETPfA",
+      "titel": "Sådan laver du demoen med Jay",
+      "bild": "assets/yt/sqTKP4ETPfA.webp",
+      "sprache": "DK"
+    }
+  ]
+}

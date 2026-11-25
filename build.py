@@ -1,4 +1,4 @@
-# Erzeugt index.html aus den Inhalten unten. Videos ein-/ausblenden: True/False.
+# Erzeugt index.html. Videos kommen aus videos.json (wird automatisch aus den YouTube-Playlists befuellt).
 import html
 profil = dict(name="Superlifestyle4u", person="Melanie N. Seyfarth", rolle="Unabhängige Super Patch Partnerin",
   instagram="https://www.instagram.com/superlifestyle4u", youtube="https://www.youtube.com/@heilberatung")
@@ -10,32 +10,17 @@ links = [
  ("Das bin ich","Mein persönliches Facebook-Profil","https://www.facebook.com/share/16iSZDcPRD/","assets/profil.webp"),
  ("Schreib mir auf WhatsApp","Ich bin für dich da","https://wa.me/4915156085551","assets/whatsapp.webp"),
 ]
-shorts = [
- ("hqQiaKcssfo","Moderne Medizin, alte Antworten auf neue Probleme",True),
- ("ID4qA0dTEJg","Black Friday Mega Deal",True),
- ("Ih1LGjGePOM","Vibrotaktile Technologie von Super Patch",True),
- ("hR-Yp6534fc","Sofortige Veränderung",True),
- ("P-tJDqF7eNo","Schmerzen: Die Studie zeigt …",True),
- ("ETkhepRYbS8","Deutliche Stressreduzierung sichtbar",True),
- ("bD5rk8vXZrs","Erfahrungsbericht Freedom und Defend",True),
- ("nkMjXvPpNxM","Testimony Pain",True),
- ("UfXvNrsKk1Y","28. Oktober 2025",True),
- ("yIHLQQKNC4c","Sådan laver du demoen med Jay",False),
-]
+import json
+_v=json.load(open("videos.json",encoding="utf-8"))
 eigene = [
  ("assets/jay-restore.mp4","assets/jay-restore.webp","Auszeichnung für die RESTORE-Studie","Jay Dhaliwal, Gründer und CEO von Super Patch, über die Auszeichnung von Dr. Jeff Gudin und seinem Team beim Kongress „Business of Pain 2026“ in Miami Beach.",True),
  ("assets/jay-15-jahre.mp4","assets/jay-15-jahre.webp","15 Jahre Entwicklung","Jay Dhaliwal über die 15 Jahre Entwicklungsarbeit hinter dem Patch.",True),
 ]
-videos = [("yP2oXVvSrqc","Wie die Technologie funktioniert","DE",True),("Dt9QMNOUzMY","REM Patch","DE",True),("7biT7ZaT4I8","Lumi Patch","DE",True),("xzSriNDz28s","Rocket Patch","DE",True)]
-weitere = [("AbyxyIsGTQU","REM Patch","EN",True),("XaWDJxgb1Q4","Lumi Patch","EN",True),("wzXYRicPb5M","Rocket Patch","US",True),
- ("ml23Q4Ri8j4","REM Patch","ES",True),("9KnTbvGlFtE","Lumi Patch","ES",True),("Qd1TK5hhRqw","Boost Patch","ES",True),
- ("cdijfMQuRvA","Hvordan Freedom Patch fungerer","DK",True),("ZDiafYmS3wg","Hvordan REM Patch fungerer","DK",True),("sqTKP4ETPfA","Sådan laver du demoen med Jay","DK",True)]
-
 e=html.escape
 PLAY='<span class="sl-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>'
 def grid(lst):
-    return '<div class="sl-videos">'+''.join(f'<button type="button" class="sl-video" data-yt="{i}"><span class="sl-video-thumb"><img src="assets/yt/{i}.webp" alt="" loading="lazy">{PLAY}</span><span class="sl-video-meta"><span class="sl-lang">{l}</span><span class="sl-video-title">{e(t)}</span></span></button>' for i,t,l,z in lst if z)+'</div>'
-S=[s for s in shorts if s[2]]; W=[w for w in weitere if w[3]]
+    return '<div class="sl-videos">'+''.join(f'<button type="button" class="sl-video" data-yt="{v["id"]}"><span class="sl-video-thumb"><img src="{v["bild"]}" alt="" loading="lazy">{PLAY}</span><span class="sl-video-meta">'+(f'<span class="sl-lang">{v["sprache"]}</span>' if v.get("sprache") else '')+f'<span class="sl-video-title">{e(v["titel"])}</span></span></button>' for v in lst)+'</div>'
+S=_v["shorts"]; V=_v["videos"]; W=_v["weitere"]
 body=f'''<div class="sl-ambient" aria-hidden="true"></div>
 <main class="sl-col">
 <header class="sl-hero"><img src="assets/hero.webp" alt="Melanie N. Seyfarth mit den Super Patch Sorten" class="sl-hero-img"><div class="sl-hero-fade"></div>
@@ -44,10 +29,10 @@ body=f'''<div class="sl-ambient" aria-hidden="true"></div>
 <a href="{profil["youtube"]}" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="sl-social-btn"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg></a></div></div></header>
 <a href="{haupt["url"]}" target="_blank" rel="noopener noreferrer" class="sl-main-cta"><img src="{haupt["bild"]}" alt="" class="sl-main-cta-img"><span class="sl-main-cta-body"><span class="sl-main-cta-title">{e(haupt["titel"])}</span><span class="sl-main-cta-text">{e(haupt["text"])}</span></span><span class="sl-main-cta-arrow" aria-hidden="true">→</span></a>
 <nav class="sl-links" aria-label="Links">{"".join(f'<a href="{u}" target="_blank" rel="noopener noreferrer" class="sl-link"><img src="{b}" alt="" class="sl-link-img"><span class="sl-link-body"><span class="sl-link-title">{e(t)}</span><span class="sl-link-text">{e(x)}</span></span><span class="sl-link-arrow" aria-hidden="true">›</span></a>' for t,x,u,b in links)}</nav>
-<section class="sl-section"><h2 class="sl-h2">Kurz erklärt</h2><div class="sl-shorts">{"".join(f'<button type="button" class="sl-short" data-yt="{i}" data-tall="1"><img src="assets/yt/{i}.webp" alt="" loading="lazy" class="sl-short-img">{PLAY}<span class="sl-short-title">{e(t)}</span></button>' for i,t,z in S)}</div></section>
+<section class="sl-section"><h2 class="sl-h2">Kurz erklärt</h2><div class="sl-shorts">{"".join(f'<button type="button" class="sl-short" data-yt="{v["id"]}" data-tall="1"><img src="{v["bild"]}" alt="" loading="lazy" class="sl-short-img">{PLAY}<span class="sl-short-title">{e(v["titel"])}</span></button>' for v in S)}</div></section>
 <section class="sl-section"><h2 class="sl-h2">Jay Dhaliwal, Gründer von Super Patch</h2><div class="sl-own">{"".join(f'<button type="button" class="sl-own-card" data-mp4="{d}"><span class="sl-own-thumb"><img src="{v}" alt="" loading="lazy">{PLAY}</span><span class="sl-own-title">{e(t)}</span><span class="sl-own-text">{e(x)}</span></button>' for d,v,t,x,z in eigene if z)}</div></section>
-<section class="sl-section"><h2 class="sl-h2">Die Patches im Video</h2>{grid(videos)}
-<details class="sl-more"><summary>Videos in anderen Sprachen ({len(W)})</summary>{grid(W)}</details>
+<section class="sl-section"><h2 class="sl-h2">Die Patches im Video</h2>{grid(V)}
+{f'<details class="sl-more"><summary>Videos in anderen Sprachen ({len(W)})</summary>{grid(W)}</details>' if W else ''}
 <a href="{profil["youtube"]}" target="_blank" rel="noopener noreferrer" class="sl-yt-channel">Alle Videos auf YouTube ansehen</a></section>
 <footer class="sl-footer"><a href="impressum.html">Impressum</a><span aria-hidden="true">·</span><a href="datenschutz.html">Datenschutz</a></footer>
 </main>
